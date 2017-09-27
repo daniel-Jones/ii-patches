@@ -1,3 +1,5 @@
+--- ii_.c	2017-09-27 10:05:29.861750088 +0930
++++ ii.c	2017-09-27 11:19:34.537766926 +0930
 @@ -436,11 +436,14 @@
  channel_print(Channel *c, const char *buf)
  {
@@ -11,7 +13,7 @@
  	if (!(fp = fopen(c->outpath, "a")))
  		return;
 -	fprintf(fp, "%lu %s\n", (unsigned long)t, buf);
-+	fprintf(fp, "%d:%d %s\n", timeinfo->tm_hour, timeinfo->tm_min, buf);
++	fprintf(fp, "%d:%02d %s\n", timeinfo->tm_hour, timeinfo->tm_min, buf);
  	fclose(fp);
  }
  
